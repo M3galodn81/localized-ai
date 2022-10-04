@@ -1,0 +1,6 @@
+mahalika
+  Django Project Folder
+
+Don't modify the contents of web-app folder
+
+UI Concept still needed
