@@ -4,12 +4,14 @@ localized-ai description
 
 # Coding Requirements
 
-Python 3.10  
-Visual Studio Code  
-    Extenstions:  
-        Python  
-        Pylance  
-GitHub(Web)  
+-Python 3.10  
+-    django
+-Visual Studio Code  
+-    Extenstions:  
+-        Python  
+-        Pylance  
+-GitHub(Web)  
+
 
 # Functions To Be Implement
 
