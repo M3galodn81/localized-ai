@@ -2,17 +2,16 @@
 
 localized-ai description
 
-# Files Needed
+# Coding Requirements
 
 Python 3.10  
 Visual Studio Code  
     Extenstions:  
         Python  
         Pylance  
-Git  
 GitHub(Web)  
 
-# Functions
+# Functions To Be Implement
 
 nya
 
