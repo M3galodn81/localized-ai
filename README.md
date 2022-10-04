@@ -9,7 +9,7 @@ localized-ai description
 - Visual Studio Code  
     - Extenstions:  
         - Python  
-    - Pylance  
+        - Pylance  
 - GitHub(Web)  
 
 
