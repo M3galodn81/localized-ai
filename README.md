@@ -1,11 +1,13 @@
-# localized-ai
+# GABAY
 
-localized-ai description
+Ang iyong gabay sa paglalakbay
+2nd Description
 
 # Coding Requirements
 
 - Python 3.10  
-    - django
+    - django (for website)
+    - kivy
 - Visual Studio Code  
     - Extenstions:  
         - Python  
@@ -15,7 +17,9 @@ localized-ai description
 
 # Functions To Be Implement
 
-nya
+Application
+AI
+APIs
 
 # Sources
 
