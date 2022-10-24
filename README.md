@@ -7,7 +7,7 @@ Ang iyong gabay sa paglalakbay
 
 - Python 3.10  
     - django (for website/app)
-    - Flutter
+    - React
 - Visual Studio Code  
     - Extenstions:  
         - Python  
@@ -26,3 +26,7 @@ Ang iyong gabay sa paglalakbay
 # Sources
 
 soon
+
+# About Us
+
+We are suffering. Help.
