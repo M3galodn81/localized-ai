@@ -12,8 +12,7 @@ Ang iyong gabay sa paglalakbay
     - Extenstions:  
         - Python  
         - Pylance  
-- GitHub(Web) 
-- braincells
+- GitHub(Web)
 
 
 # Functions To Be Implement
