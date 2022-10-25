@@ -1,0 +1,2 @@
+class MainWidget(Widget):
+    pass
