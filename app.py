@@ -4,29 +4,21 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import ScreenManager, Screen
 
-class MainWidget(Widget):
+class WelcomeScreen(Screen):
     pass
 
-class BoxLayoutExample(BoxLayout):
+class MainScreen(Screen):
     pass
-#     def __init__(self, **kwargs):
-#         super().__init__(**kwargs)
-#         b1 = Button(text = "A1")
-#         b2 = Button(text = "A2")
-#         self.add_widget(b1)
-#         self.add_widget(b2)
-
-
+ 
 class GABAYApp(App):
-    pass
-    # def build(self):
-    #     f = FloatLayout()
-    #     l = Label(text="Hello!",
-    #               font_size=150)
 
-    #     f.add_widget(l)
-    #     return f
+    def build(self):
+        sm =ScreenManager()
+        sm.add_widget(WelcomeScreen(name='welcomeScreen'))
+        sm.add_widget(MainScreen(name='mainScreen'))
+        return sm
 
 if __name__ == "__main__":
     GABAYApp().run()

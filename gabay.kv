@@ -1,21 +1,47 @@
-BoxLayoutExample:
+WelcomeScreen:
 
-<BoxLayoutExample>:
-    orientation:"vertical"
+<MainScreen>:
     BoxLayout:
-        # orientation:"vertical"
-        size_hint: 1 , 0.2
-        Button:
-            text: "Header"
-        Button:
-            text: "Menu"
-            size_hint:.15, 1
-        
-    Button:
-        text:"Body"
+        orientation:"vertical"
+        BoxLayout:
+            size_hint: 1 , 0.2
+            Button:
+                text: "Header"
+            Button:
+                text: "Menu"
+                size_hint:.15, 1
+                on_press: 
+                    root.manager.current = 'welcomeScreen'
+                    root.manager.transition.direction = 'right'
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            size: self.size
 
-<MainWidget>:
-    Button:
-        text:"Hello"
-        size: "400dp","80dp"
-        pos:"200dp","300dp"
+ StackLayout:>
+                orientation:"lr-tb"
+                size_hint: 1 , None
+                Button:
+                    text:"Body"
+                Button:
+                    text:"News"
+                Button:
+                    text:"News"
+                Button:
+                    text:"News"                
+                Button:
+                    text:"News"                
+                Button:
+                    text:"News"
+<WelcomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text:"Hello"
+            size: "400dp","80dp"
+            pos:"200dp","300dp"
+        Button:
+            text:"Next Screen"
+            on_press: 
+                root.manager.current = 'mainScreen'
+                root.manager.transition.direction = 'left'
