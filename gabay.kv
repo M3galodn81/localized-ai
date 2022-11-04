@@ -2,10 +2,17 @@ BoxLayoutExample:
 
 <BoxLayoutExample>:
     orientation:"vertical"
+    BoxLayout:
+        # orientation:"vertical"
+        size_hint: 1 , 0.2
+        Button:
+            text: "Header"
+        Button:
+            text: "Menu"
+            size_hint:.15, 1
+        
     Button:
-        text:"A"
-    Button:
-        text:"B"
+        text:"Body"
 
 <MainWidget>:
     Button:
