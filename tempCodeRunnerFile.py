@@ -1,2 +1,1 @@
-class MainWidget(Widget):
-    pass
+pass

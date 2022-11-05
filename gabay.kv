@@ -17,22 +17,35 @@ WelcomeScreen:
             do_scroll_x: False
             do_scroll_y: True
             size: self.size
-
- StackLayout:>
-                orientation:"lr-tb"
-                size_hint: 1 , None
+            GridLayout:
+                cols: 1
+                orientation: "lr-tb"
+                size_hint_y: None
+                height: self.minimum_height
                 Button:
                     text:"Body"
+                    size_hint_y: None
+                    size_y: "100dp"
                 Button:
-                    text:"News"
+                    text:"News 1"
+                    size_hint_y: None
+                    size_y: "100dp"
                 Button:
-                    text:"News"
+                    text:"News 2"
+                    size_hint_y: None
+                    size_y: "100dp"
                 Button:
-                    text:"News"                
+                    text:"News 3"
+                    size_hint_y: None
+                    size_y: "100dp"                
                 Button:
-                    text:"News"                
+                    text:"News 4"
+                    size_hint_y: None
+                    size_y: "100dp"                
                 Button:
-                    text:"News"
+                    text:"News 5"
+                    size_hint_y: None
+                    size_y: "100dp"
 <WelcomeScreen>:
     BoxLayout:
         orientation: "vertical"
