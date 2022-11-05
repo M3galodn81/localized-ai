@@ -4,7 +4,7 @@ WelcomeScreen:
     BoxLayout:
         orientation:"vertical"
         BoxLayout:
-            size_hint: 1 , 0.2
+            size_hint: 1 , 0.1
             Button:
                 text: "Header"
             Button:
@@ -51,10 +51,28 @@ WelcomeScreen:
         orientation: "vertical"
         Button:
             text:"Hello"
-            size: "400dp","80dp"
-            pos:"200dp","300dp"
+            size_hint: 1, 0.5
         Button:
-            text:"Next Screen"
+            text:"Sign in using Gmail"
+            size_hint: .7, None
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            height: "75dp"
+            on_press: 
+                root.manager.current = 'mainScreen'
+                root.manager.transition.direction = 'left'
+        Button:
+            text:"Sign in using Facebook"
+            size_hint: .7, None
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            height: "75dp"
+            on_press: 
+                root.manager.current = 'mainScreen'
+                root.manager.transition.direction = 'left'
+        Button:
+            text:"Continue as Guest"
+            size_hint: .7, None
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            height: "75dp"
             on_press: 
                 root.manager.current = 'mainScreen'
                 root.manager.transition.direction = 'left'
