@@ -43,8 +43,8 @@ while True:
         
         try:
             queue = sr.Recognizer().recognize_google(audio, language='tl')
-            # salita = str(queue).lower
-            salita = str('kamusta ka, anong oras')
+            salita = str(queue).lower
+            # salita = str('kamusta ka, anong oras')
         
             if 'kamusta' in salita and 'ka' in salita: # kamusta ka function
                 bigkas('okay lang po')
