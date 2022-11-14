@@ -16,6 +16,9 @@ class WelcomeScreen(Screen):
 
 class MainScreen(Screen):
     pass
+
+class SettingScreen(Screen);
+    pass
  
 class GABAYApp(App):
 
@@ -23,6 +26,7 @@ class GABAYApp(App):
         sm =ScreenManager()
         sm.add_widget(WelcomeScreen(name='welcomeScreen'))
         sm.add_widget(MainScreen(name='mainScreen'))
+        sm.add_widget(SettingScreen(name='settingScreen'))
         return sm
 
 if __name__ == "__main__":
