@@ -19,7 +19,7 @@ def take_command():
         audio = r.listen(source)
         try:
             print("Recognizing")    
-            Query = r.recognize_google(audio, language='tl')
+            Query = r.recognize_google(audio, language='en-in')
             print("the command is printed=", Query)
         except Exception as e:
             print(e)
@@ -29,7 +29,7 @@ def take_command():
 
 def take_query():
     while True:
-        queue = take_command.lower()
+        queue = take_command().lower()
         # queue = 'hello'
         if 'hello' in queue: # kamusta ka function
             speak('kamusta')

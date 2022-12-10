@@ -9,6 +9,8 @@ debug_date = datetime.datetime.now()
 debug_string_date = debug_date.strftime("%d/%m/%Y %H:%M:%S")
 noErrorMessage = "Run Completed || Date: " + debug_string_date + "\n"
 
+nya ='TEST TEXT'
+print(f'{nya.lower()}')
 print("Hello,user \nWhat to you need?\n")
 print("Please select")
 
