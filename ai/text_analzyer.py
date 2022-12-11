@@ -1,5 +1,4 @@
 import voice_input
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 import datetime
@@ -11,6 +10,11 @@ def greeting():
 def time_now():
     time = datetime.datetime.now()
     output = time.strftime('%I%M%p')
+    voice_input.speak(output)
+
+def date_now():
+    time = datetime.datetime.now()
+    output = time.strftime('%B %d %Y')
     voice_input.speak(output)
 
 def token_analyze(query):
@@ -25,6 +29,14 @@ def token_analyze(query):
         print('time')
         time_now()
 
+    if 'what' in tokens and 'date' in tokens:
+        print('date')
+        date_now()
+
+    if 'close' in tokens and 'app' in tokens:
+        print('exit')
+        voice_input.speak('goodbye')
+        return False
     
 
 # print(word_tokenize(query))

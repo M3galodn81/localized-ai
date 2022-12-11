@@ -30,11 +30,12 @@ def take_command():
 
 
 def take_query():
-    while True:
-        # queue = take_command().lower()
-        queue = 'what time'
-        
-        text_analzyer.token_analyze(queue)
+    program_running = True
+    while program_running:
+        queue = take_command().lower()
+        # queue = 'close app'
+        program_running = text_analzyer.token_analyze(queue)
+    print('closed program')
 
 if __name__ =='__main__':
     take_query()
