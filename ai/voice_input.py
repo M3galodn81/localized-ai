@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
+import text_analzyer
 
 def speak(audio):
     engine = pyttsx3.init()
@@ -7,9 +8,6 @@ def speak(audio):
     engine.setProperty('voices', voices[0].id)
     engine.say(audio)
     engine.runAndWait()
-
-def greeting():
-    speak("Hello")
 
 def take_command():
     r = sr.Recognizer()
@@ -19,25 +17,24 @@ def take_command():
         audio = r.listen(source)
         try:
             print("Recognizing")    
-            Query = r.recognize_google(audio, language='en-in')
-            print("the command is printed=", Query)
+            query = r.recognize_google(audio, language='en-in')
+            print("the command is printed=", query)
+            query = ''
+        except KeyboardInterrupt:
+            assert True
         except Exception as e:
             print(e)
             print("Say that again sir")
             return "None"
-        return Query
+        return query
+
 
 def take_query():
     while True:
-        queue = take_command().lower()
-        # queue = 'hello'
-        if 'hello' in queue: # kamusta ka function
-            speak('kamusta')
-            continue 
-            
-        if ('anong' in queue) and ('oras' in queue): #anong oras function
-            speak(f'oras')
-            continue
+        # queue = take_command().lower()
+        queue = 'what time'
         
+        text_analzyer.token_analyze(queue)
+
 if __name__ =='__main__':
     take_query()
