@@ -5,7 +5,7 @@ import text_analzyer
 def speak(audio):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
-    engine.setProperty('voices', voices[0].id)
+    engine.setProperty('voices', 'filipino')
     engine.say(audio)
     engine.runAndWait()
 
@@ -17,7 +17,7 @@ def take_command():
         audio = r.listen(source)
         try:
             print("Recognizing")    
-            query = r.recognize_google(audio, language='en-in')
+            query = r.recognize_google(audio)
             print("the command is printed=", query)
             query = ''
         except KeyboardInterrupt:
@@ -32,8 +32,8 @@ def take_command():
 def take_query():
     program_running = True
     while program_running:
-        queue = take_command().lower()
-        # queue = 'close app'
+        # queue = take_command().lower()
+        queue = 'kamusta'
         program_running = text_analzyer.token_analyze(queue)
     print('closed program')
 

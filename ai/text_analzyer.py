@@ -19,6 +19,7 @@ def date_now():
 
 def token_analyze(query):
     tokens = word_tokenize(query)
+    # tokens = 'Kamusta'
     tokens = [token.lower() for token in tokens]
 
     if 'hello' in tokens:
@@ -37,6 +38,10 @@ def token_analyze(query):
         print('exit')
         voice_input.speak('goodbye')
         return False
+
+    if 'kamusta' in tokens:
+        voice_input.speak('Kamusta ka rin?')
+        print('Tagalog greeting')
     
 
 # print(word_tokenize(query))
