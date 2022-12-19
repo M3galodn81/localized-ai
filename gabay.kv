@@ -1,0 +1,78 @@
+WelcomeScreen:
+
+<MainScreen>:
+    BoxLayout:
+        orientation:"vertical"
+        BoxLayout:
+            size_hint: 1 , 0.1
+            Button:
+                text: "Header"
+            Button:
+                text: "Menu"
+                size_hint:.15, 1
+                on_press: 
+                    root.manager.current = 'welcomeScreen'
+                    root.manager.transition.direction = 'right'
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            size: self.size
+            GridLayout:
+                cols: 1
+                orientation: "lr-tb"
+                size_hint_y: None
+                height: self.minimum_height
+                Button:
+                    text:"Body"
+                    size_hint_y: None
+                    size_y: "100dp"
+                Button:
+                    text:"News 1"
+                    size_hint_y: None
+                    size_y: "100dp"
+                Button:
+                    text:"News 2"
+                    size_hint_y: None
+                    size_y: "100dp"
+                Button:
+                    text:"News 3"
+                    size_hint_y: None
+                    size_y: "100dp"                
+                Button:
+                    text:"News 4"
+                    size_hint_y: None
+                    size_y: "100dp"                
+                Button:
+                    text:"News 5"
+                    size_hint_y: None
+                    size_y: "100dp"
+<WelcomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text:"Hello"
+            size_hint: 1, 0.5
+        Button:
+            text:"Sign in using Gmail"
+            size_hint: .7, None
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            height: "75dp"
+            on_press: 
+                root.manager.current = 'mainScreen'
+                root.manager.transition.direction = 'left'
+        Button:
+            text:"Sign in using Facebook"
+            size_hint: .7, None
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            height: "75dp"
+            on_press: 
+                root.manager.current = 'mainScreen'
+                root.manager.transition.direction = 'left'
+        Button:
+            text:"Continue as Guest"
+            size_hint: .7, None
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            height: "75dp"
+            on_press: 
+                root.manager.current = 'mainScreen'
+                root.manager.transition.direction = 'left'

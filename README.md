@@ -12,9 +12,6 @@ Ang iyong gabay sa paglalakbay
     - Extenstions:  
         - Python  
         - Pylance  
-- GitHub(Web) 
-- braincells
-
 
 # Functions To Be Implement
 
@@ -30,3 +27,4 @@ soon
 # About Us
 
 We are suffering. Help.
+
