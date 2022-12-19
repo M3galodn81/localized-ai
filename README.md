@@ -12,8 +12,6 @@ Ang iyong gabay sa paglalakbay
     - Extenstions:  
         - Python  
         - Pylance  
-- GitHub(Web)
-
 
 # Functions To Be Implement
 
