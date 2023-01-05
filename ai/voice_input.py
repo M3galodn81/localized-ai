@@ -5,7 +5,7 @@ import text_analzyer
 def speak(audio):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
-    engine.setProperty('voices', 'filipino')
+    engine.setProperty('voices', voices[0])
     engine.say(audio)
     engine.runAndWait()
 

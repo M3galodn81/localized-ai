@@ -3,7 +3,6 @@ from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 import datetime
 
-
 def greeting():
     voice_input.speak('Hello')
 
@@ -17,9 +16,15 @@ def date_now():
     output = time.strftime('%B %d %Y')
     voice_input.speak(output)
 
+def meaning(text):
+    text = text.split()
+    # remove any words before 'meaning' or anong ibig sabihin
+    # add the words after the 'meaning' into a variable
+    # search the defintion of the word
+    # 
+
 def token_analyze(query):
     tokens = word_tokenize(query)
-    # tokens = 'Kamusta'
     tokens = [token.lower() for token in tokens]
 
     if 'hello' in tokens:
@@ -43,15 +48,8 @@ def token_analyze(query):
         voice_input.speak('Kamusta ka rin?')
         print('Tagalog greeting')
     
-
-# print(word_tokenize(query))
-
-# def preprocess(sent):
-#     sent = nltk.word_tokenize(sent)
-#     sent = nltk.pos_tag(sent)
-#     return sent
-
-# print(preprocess(query))
+    if 'meaning' in tokens:
+        print('def')
 
 if __name__ == '__main__':
     token_analyze()
