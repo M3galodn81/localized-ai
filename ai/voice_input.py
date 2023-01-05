@@ -32,8 +32,7 @@ def take_command():
 def take_query():
     program_running = True
     while program_running:
-        # queue = take_command().lower()
-        queue = 'kamusta'
+        queue = take_command().lower()
         program_running = text_analzyer.token_analyze(queue)
     print('closed program')
 
