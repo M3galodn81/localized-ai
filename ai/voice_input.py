@@ -32,7 +32,8 @@ def take_command():
 def take_query():
     program_running = True
     while program_running:
-        queue = take_command().lower()
+        # queue = take_command().lower()
+        queue = 'anong ibig sabihin ng pag-asa ng bayan'
         program_running = text_analzyer.token_analyze(queue)
     print('closed program')
 
