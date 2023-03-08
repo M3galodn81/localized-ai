@@ -17,7 +17,7 @@ def take_command():
         audio = r.listen(source)
         try:
             print("Recognizing")    
-            query = r.recognize_google(audio)
+            query = r.recognize_google(audio, language='tl')
             print("the command is printed=", query)
             query = ''
         except KeyboardInterrupt:
