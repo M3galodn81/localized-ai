@@ -1,13 +1,21 @@
 import speech_recognition as sr
 import pyttsx3
 import text_analzyer
+from gtts import gTTS
+import playsound
 
-def speak(audio):
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
-    engine.say(audio)
-    engine.runAndWait()
+# def speak(audio):
+#     engine = pyttsx3.init()
+#     voices = engine.getProperty('voices')
+#     engine.setProperty('voice', voices[0].id)
+#     engine.say(audio)
+#     engine.runAndWait()
+
+def speak(text):
+    tts = gTTS(text=text, lang='tl')
+    filename = 'voice.mp3'
+    tts.save(filename)
+    playsound.playsound(filename)
 
 def take_command():
     r = sr.Recognizer()
@@ -33,7 +41,7 @@ def take_query():
     program_running = True
     while program_running:
         queue = take_command().lower()
-        # queue = 'what time'
+        # queue = 'kamusta'
         program_running = text_analzyer.token_analyze(queue)
     print('closed program')
 

@@ -9,11 +9,13 @@ def greeting():
 def time_now():
     time = datetime.datetime.now()
     output = time.strftime('%I%M%p')
+    print(output)
     voice_input.speak(output)
 
 def date_now():
     time = datetime.datetime.now()
     output = time.strftime('%B %d %Y')
+    print(output)
     voice_input.speak(output)
 
 def token_analyze(query):
