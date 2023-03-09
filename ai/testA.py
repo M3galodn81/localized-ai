@@ -21,13 +21,13 @@ def recog():
         audio = r.listen(source)
 
         try:
-            # text = str(r.recognize_google(audio,language="fil-PH")).lower()
-            text = ('mag google ka').lower()
+            text = str(r.recognize_google(audio,language="fil-PH")).lower()
+            # text = ('gusto ko manood sa youtube').lower()
             print(text)
 
             if text == "mag google ka": # <----------
                 webbrowser.open("www.google.com")
-            elif text == "gusto ko manood sa youtube": #<---------
+            elif text == "youtube": #<---------
                 webbrowser.open("www.youtube.com") 
 
             recog()
