@@ -1,6 +1,6 @@
 import voice_input
+from nltk.tokenize import word_tokenize
 import datetime
-
 
 
 def greeting():
@@ -17,7 +17,7 @@ def date_now():
     voice_input.speak(output)
 
 def token_analyze(query):
-    tokens = query
+    tokens = word_tokenize(query)
     # tokens = 'Kamusta'
     tokens = [token.lower() for token in tokens]
 
