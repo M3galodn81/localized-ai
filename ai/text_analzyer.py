@@ -2,6 +2,7 @@ import voice_input
 import datetime
 
 
+
 def greeting():
     voice_input.speak('Hello')
 
@@ -16,7 +17,7 @@ def date_now():
     voice_input.speak(output)
 
 def token_analyze(query):
-    tokens = word_tokenize(query)
+    tokens = query
     # tokens = 'Kamusta'
     tokens = [token.lower() for token in tokens]
 
