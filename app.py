@@ -17,7 +17,7 @@ class WelcomeScreen(Screen):
 class MainScreen(Screen):
     pass
 
-class SettingScreen(Screen);
+class SettingScreen(Screen):
     pass
  
 class GABAYApp(App):

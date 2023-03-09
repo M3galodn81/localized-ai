@@ -13,7 +13,7 @@ r = sr.Recognizer()
 engine = pyttsx3.init()
 
 def recog():
-    with sr.Microphone(2) as source:
+    with sr.Microphone() as source:
         engine.say("Speak Now")
         print("Speak Now : ")
         engine.runAndWait()
@@ -21,8 +21,8 @@ def recog():
         audio = r.listen(source)
 
         try:
-            text = str(r.recognize_google(audio,language="fil-PH")).lower()
-            # text = ('mag google ka').lower()
+            # text = str(r.recognize_google(audio,language="fil-PH")).lower()
+            text = ('mag google ka').lower()
             print(text)
 
             if text == "mag google ka": # <----------
