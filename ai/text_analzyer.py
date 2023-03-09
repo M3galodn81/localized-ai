@@ -22,6 +22,7 @@ def token_analyze(query):
     tokens = word_tokenize(query)
     # tokens = 'Kamusta'
     tokens = [token.lower() for token in tokens]
+    print(tokens)
 
     if 'hello' in tokens:
         print('hello')
@@ -41,7 +42,7 @@ def token_analyze(query):
         return False
 
     if 'kamusta' in tokens:
-        voice_input.speak('Kamusta ka rin?')
+        voice_input.speak('Kamusta ka rin')
         print('Tagalog greeting')
     
 
