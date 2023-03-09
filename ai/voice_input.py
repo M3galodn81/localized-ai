@@ -17,7 +17,7 @@ def take_command():
         audio = r.listen(source)
         try:
             print("Recognizing")    
-            query = r.recognize_google(audio, language='tl')
+            query = r.recognize_google(audio)
             print("the command is printed=", query)
             query = ''
         except KeyboardInterrupt:
@@ -33,7 +33,7 @@ def take_query():
     program_running = True
     while program_running:
         queue = take_command().lower()
-        # queue = 'kamusta'
+        # queue = 'what time'
         program_running = text_analzyer.token_analyze(queue)
     print('closed program')
 
