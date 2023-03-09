@@ -23,11 +23,12 @@ def take_command():
         print('Listening')
         r.pause_threshold = 0.7
         audio = r.listen(source)
+        query = ''
         try:
             print("Recognizing")    
             query = r.recognize_google(audio)
             print("the command is printed=", query)
-            query = ''
+            
         except KeyboardInterrupt:
             assert True
         except Exception as e:
@@ -38,11 +39,10 @@ def take_command():
 
 
 def take_query():
-    program_running = True
-    while program_running:
-        queue = take_command().lower()
-        # queue = 'kamusta'
-        program_running = text_analzyer.token_analyze(queue)
+    
+    queue = take_command().lower()
+    # queue = 'kamusta'
+    text_analzyer.token_analyze(queue)
     print('closed program')
 
 if __name__ =='__main__':
