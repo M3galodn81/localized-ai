@@ -41,7 +41,7 @@ def take_command():
 def take_query():
     
     # queue = take_command().lower()
-    queue = 'kamusta'
+    queue = 'what time'
     text_analzyer.token_analyze(queue)
     print('closed program')
 

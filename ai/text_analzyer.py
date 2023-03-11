@@ -3,18 +3,33 @@ from nltk.tokenize import word_tokenize
 import datetime
 
 
+months_en =['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+months_tl =['Enero', 'Pebrero', 'Marso', 'Abril', 'Mayo', 'Hunyo', 'Hulyo', 'Agosto', 'Setyembre', 'Oktubre', 'Nobyembre', 'Disyembre']
+
 def greeting():
     voice_input.speak('Hello')
 
 def time_now():
     time = datetime.datetime.now()
-    output = time.strftime('%I%M%p')
+    hour = time.strftime('%I:%M')
+    if time.strftime('%p') == 'AM':
+        meridiem = ' ng umaga'
+    else:
+        meridiem = ' ng hapon'
+    output = hour + meridiem
     print(output)
     voice_input.speak(output)
 
+def translate_month(month_en):
+    i = months_en.index(month_en)
+    return months_tl[i]
+    
 def date_now():
     time = datetime.datetime.now()
-    output = time.strftime('%B %d %Y')
+    month = translate_month(time.strftime('%B'))
+    day = time.strftime('%d')
+    year = time.strftime('%Y')
+    output = f'Ika-{day} ng {month} ng taong {year}'
     print(output)
     voice_input.speak(output)
 
@@ -28,11 +43,11 @@ def token_analyze(query):
         print('hello')
         greeting()
 
-    if 'what' in tokens and 'time' in tokens:
+    if 'ano' in tokens and 'oras' in tokens:
         print('time')
         time_now()
 
-    if 'what' in tokens and 'date' in tokens:
+    if 'ano' in tokens and 'petsa' in tokens:
         print('date')
         date_now()
 
