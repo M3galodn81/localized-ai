@@ -40,8 +40,8 @@ def take_command():
 
 def take_query():
     
-    # queue = take_command().lower()
-    queue = 'what time'
+    queue = take_command().lower()
+    # queue = 'ano oras na'
     text_analzyer.token_analyze(queue)
     print('closed program')
 
