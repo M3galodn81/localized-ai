@@ -43,11 +43,11 @@ def token_analyze(query):
         print('hello')
         greeting()
 
-    if 'ano' in tokens and 'oras' in tokens:
+    if ('ano' in tokens or 'anong' in tokens)  and 'oras' in tokens:
         print('time')
         time_now()
 
-    if 'ano' in tokens and 'petsa' in tokens:
+    if ('ano' in tokens or 'anong' in tokens) and 'petsa' in tokens:
         print('date')
         date_now()
 
