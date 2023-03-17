@@ -10,27 +10,10 @@ def greeting():
     voice_input.speak('Hello rin.  Ako si Gabay ang inyong katulong')
 
 def meridiem_tl():
-    hr = '%I'
-    md = '%p'
-    mn = '%M'
-    if (hr == 12 ) and (md == 'AM'):
-        return 'ng hating-gabi'
-    if (hr >= 5 and (hr <=  11 and mn <= 59)) and (md == 'AM'):
-        return 'ng umaga'
-    if (hr >= 1 and (hr <=5 and mn <= 59)) and (md == 'PM'):
-        return 'ng hapon'
-    if (hr >= 6 and (hr <=11 and mn <= 59)) and (md == 'PM'):
-        return 'ng gabi'
-    if (hr >= 12 and (hr <=4 and mn <= 59)) and (md == 'PM'):
-        return 'ng hapon'
-    
-    
-
-def meridiem_tl():
     time = datetime.datetime.now()
-    hr = time.strftime('%I')
+    hr = int(time.strftime('%I'))
     md = time.strftime('%p')
-    mn = time.strftime('%M')
+    mn = int(time.strftime('%M'))
 
     if ((hr == 12) and (mn == 0) ) and (md == 'AM'):
         return 'ng hating-gabi'
@@ -50,7 +33,7 @@ def time_now():
     time = datetime.datetime.now()
     hour = time.strftime('%I:%M')
     meridiem = meridiem_tl()
-    output = hour + meridiem
+    output = hour + ' '  +meridiem
     print(output)
     voice_input.speak(output)
 
@@ -87,7 +70,6 @@ def token_analyze(query):
     if 'close' in tokens and 'app' in tokens:
         print('AI: Closing')
         voice_input.speak('Pa-alam, hanggang sa muli')
-        return False
 
     if 'kamusta' in tokens:
         print('AI: Telling a tagalog greeting')
