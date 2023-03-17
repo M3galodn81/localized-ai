@@ -7,7 +7,7 @@ months_en =['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug
 months_tl =['Enero', 'Pebrero', 'Marso', 'Abril', 'Mayo', 'Hunyo', 'Hulyo', 'Agosto', 'Setyembre', 'Oktubre', 'Nobyembre', 'Disyembre']
 
 def greeting():
-    voice_input.speak('Hello')
+    voice_input.speak('Hello rin.  Ako si Gabay ang inyong katulong')
 
 def meridiem_tl():
     hr = '%I'
@@ -23,6 +23,8 @@ def meridiem_tl():
         return 'ng gabi'
     if (hr >= 12 and (hr <=4 and mn <= 59)) and (md == 'PM'):
         return 'ng hapon'
+    
+    
 
 def meridiem_tl():
     time = datetime.datetime.now()
@@ -70,26 +72,32 @@ def token_analyze(query):
     tokens = [token.lower() for token in tokens]
     print(tokens)
 
-    if 'hello' in tokens:
-        print('hello')
+    if ('hello' in tokens ) and ('gabay' in tokens):
+        print('AI: Greeting')
         greeting()
 
     if ('ano' in tokens or 'anong' in tokens)  and 'oras' in tokens:
-        print('time')
+        print('AI: Telling time')
         time_now()
 
     if ('ano' in tokens or 'anong' in tokens) and 'petsa' in tokens:
-        print('date')
+        print('AI: Telling date')
         date_now()
 
     if 'close' in tokens and 'app' in tokens:
-        print('exit')
-        voice_input.speak('goodbye')
+        print('AI: Closing')
+        voice_input.speak('Pa-alam, hanggang sa muli')
         return False
 
     if 'kamusta' in tokens:
+        print('AI: Telling a tagalog greeting')
         voice_input.speak('Kamusta ka rin')
-        print('Tagalog greeting')
+
+    if ('sino' in tokens) and ('nagdevelop' in tokens) and ('nito'in tokens):
+        print('AI: Easter Egg')
+        voice_input.speak('Ang gumagawa sa GABAY ay ang unang grupo ng STEM twelve - F')
+
+        
     
 if __name__ == '__main__':
     token_analyze()
