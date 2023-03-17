@@ -9,13 +9,50 @@ months_tl =['Enero', 'Pebrero', 'Marso', 'Abril', 'Mayo', 'Hunyo', 'Hulyo', 'Ago
 def greeting():
     voice_input.speak('Hello')
 
+def meridiem_tl():
+    hr = '%I'
+    md = '%p'
+    mn = '%M'
+    if (hr == 12 ) and (md == 'AM'):
+        return 'ng hating-gabi'
+    if (hr >= 5 and (hr <=  11 and mn <= 59)) and (md == 'AM'):
+        return 'ng umaga'
+    if (hr >= 1 and (hr <=5 and mn <= 59)) and (md == 'PM'):
+        return 'ng hapon'
+    if (hr >= 6 and (hr <=11 and mn <= 59)) and (md == 'PM'):
+        return 'ng gabi'
+    if (hr >= 12 and (hr <=4 and mn <= 59)) and (md == 'PM'):
+        return 'ng hapon'
+    
+    
+
+def meridiem_tl():
+    time = datetime.datetime.now()
+    hr = time.strftime('%I')
+    md = time.strftime('%p')
+    mn = time.strftime('%M')
+
+    hr = int(hr)
+    mn = int(mn)
+
+    if ((hr == 12) and (mn == 0) ) and (md == 'AM'):
+        return 'ng hating-gabi'
+    if (hr >= 5 and ((hr <= 11 )and (mn <= 59))) and (md == 'AM'):
+        return 'ng umaga'
+    if (hr >= 1 and ((hr <=5) and (mn <= 59))) and (md == 'PM'):
+        return 'ng hapon'
+    if (hr >= 6 and ((hr <=11) and (mn <= 59))) and (md == 'PM'):
+        return 'ng gabi'
+    if (hr >= 12 and ((hr <=12) and (mn <= 59))) and (md == 'PM'):
+        return 'ng tanghali'
+    if ((((hr >= 1) and (hr <= 4)) and ((mn >= 0) and (mn <= 59)) ) or ((hr ==12) and (mn >= 0) and (mn <= 59))) and  (md == 'AM'):
+        return 'ng madaling araw'
+    return None
+
 def time_now():
     time = datetime.datetime.now()
     hour = time.strftime('%I:%M')
-    if time.strftime('%p') == 'AM':
-        meridiem = ' ng umaga'
-    else:
-        meridiem = ' ng hapon'
+    meridiem = meridiem_tl()
     output = hour + meridiem
     print(output)
     voice_input.speak(output)
@@ -35,7 +72,6 @@ def date_now():
 
 def token_analyze(query):
     tokens = word_tokenize(query)
-    # tokens = 'Kamusta'
     tokens = [token.lower() for token in tokens]
     print(tokens)
 
