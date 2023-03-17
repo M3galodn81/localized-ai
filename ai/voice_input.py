@@ -13,10 +13,14 @@ import time
 #     engine.runAndWait()
 
 def speak(text):
+    start = time.time()
+    start2 = time.time()
     tts = gTTS(text=text, lang='tl')
     filename = 'voice.mp3'
     tts.save(filename)
+    print ("Process time[speak_2]: " + str(time.time() - start))
     playsound.playsound(filename)
+    print ("Process time[speak]: " + str(time.time() - start))
     
 
 def take_command():
@@ -43,11 +47,13 @@ def take_command():
 def take_query():
     
     # queue = take_command().lower()
-    queue = 'anong petsa na'
+    queue = 'sino nag develop'
     start = time.time()
     text_analzyer.token_analyze(queue)
     print ("Process time: " + str(time.time() - start))
 
 
 if __name__ =='__main__':
+    start = time.time()
     take_query()
+    print ("Process time[voice_input]: " + str(time.time() - start))
