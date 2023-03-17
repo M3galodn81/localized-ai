@@ -3,6 +3,7 @@ import pyttsx3
 import text_analzyer
 from gtts import gTTS
 import playsound
+import time
 
 # def speak(audio):
 #     engine = pyttsx3.init()
@@ -16,6 +17,7 @@ def speak(text):
     filename = 'voice.mp3'
     tts.save(filename)
     playsound.playsound(filename)
+    
 
 def take_command():
     r = sr.Recognizer()
@@ -40,10 +42,12 @@ def take_command():
 
 def take_query():
     
-    queue = take_command().lower()
-    # queue = 'ano oras na'
+    # queue = take_command().lower()
+    queue = 'anong petsa na'
+    start = time.time()
     text_analzyer.token_analyze(queue)
-    print('closed program')
+    print ("Process time: " + str(time.time() - start))
+
 
 if __name__ =='__main__':
     take_query()
