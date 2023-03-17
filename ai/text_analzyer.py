@@ -23,17 +23,12 @@ def meridiem_tl():
         return 'ng gabi'
     if (hr >= 12 and (hr <=4 and mn <= 59)) and (md == 'PM'):
         return 'ng hapon'
-    
-    
 
 def meridiem_tl():
     time = datetime.datetime.now()
     hr = time.strftime('%I')
     md = time.strftime('%p')
     mn = time.strftime('%M')
-
-    hr = int(hr)
-    mn = int(mn)
 
     if ((hr == 12) and (mn == 0) ) and (md == 'AM'):
         return 'ng hating-gabi'
