@@ -55,7 +55,7 @@ def token_analyze(query):
     tokens = [token.lower() for token in tokens]
     print(tokens)
 
-    if ('hello' in tokens ) and ('gabay' in tokens):
+    if ('kamusta' in tokens ) and ('gabay' in tokens):
         print('AI: Greeting')
         greeting()
 
@@ -67,7 +67,7 @@ def token_analyze(query):
         print('AI: Telling date')
         date_now()
 
-    if 'close' in tokens and 'app' in tokens:
+    if ((('paki') in tokens) or (('sara') in tokens) or ('paki-sara' in tokens)) and 'app' in tokens:
         print('AI: Closing')
         voice_input.speak('Pa-alam, hanggang sa muli')
 
@@ -75,7 +75,7 @@ def token_analyze(query):
         print('AI: Telling a tagalog greeting')
         voice_input.speak('Kamusta ka rin')
 
-    if ('sino' in tokens) and ('nagdevelop' in tokens) and ('nito'in tokens):
+    if ('sino' in tokens) and (('nagdevelop' in tokens) or ('nag' in tokens and 'develop' in tokens)) and ('nito'in tokens):
         print('AI: Easter Egg')
         voice_input.speak('Ang gumagawa sa GABAY ay ang unang grupo ng STEM twelve - F')
 
